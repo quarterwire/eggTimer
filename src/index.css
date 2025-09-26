@@ -28,7 +28,7 @@ button {
 }
 
 h1 {
-  @apply text-5xl font-black text-amber-900 tracking-tighter;
+  @apply text-4xl font-black text-amber-900 tracking-tighter;
 }
 h2 {
   @apply text-3xl font-black text-amber-900 tracking-tighter;
