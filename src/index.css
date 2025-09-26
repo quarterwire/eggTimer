@@ -1,9 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
 @import 'tailwindcss';
+@layer utilities {
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 280s linear infinite;
+  }
+}
+@theme {
+  --font-main: 'Pixelify Sans', sans-serif;
+}
+
+* {
+  @apply font-main;
+}
 
 button {
-  @apply text-3xl p-3 bg-amber-100 px-10 font-bold text-amber-900 shadow-lg shadow-amber-950/50 tracking-widest rounded-lg hover:cursor-pointer hover:scale-110 transition-all duration-200;
+  @apply text-3xl p-3 bg-amber-100 px-10 font-bold text-amber-900 shadow-lg shadow-amber-950/50 tracking-wider rounded-lg hover:cursor-pointer hover:scale-110 transition-all duration-200;
 }
 
 h1 {
+  @apply text-5xl font-black text-amber-900 tracking-tighter;
+}
+h2 {
   @apply text-3xl font-black text-amber-900 tracking-tighter;
 }
