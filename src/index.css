@@ -1,7 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap');
 
 @import 'tailwindcss';
+
+/* Note: Make sure the relative reference is correct */
+/* I assumed when writing the response that they are in the same folder */
+@plugin './hero.ts';
+/* Note: You may need to change the path to fit your project structure */
+@source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+
 @layer utilities {
+  @font-face {
+    font-family: Proxima Nova;
+    font-weight: 400;
+    src: url('/neurath.ttf') format('tff');
+  }
   @keyframes spin-slow {
     from {
       transform: rotate(0deg);
@@ -16,7 +29,8 @@
   }
 }
 @theme {
-  --font-main: 'Pixelify Sans', sans-serif;
+  --font-main: 'Faculty Glyphic', sans-serif;
+  --font-second: 'Neurath', sans-serif;
 }
 
 * {
@@ -26,10 +40,9 @@
 button {
   @apply text-3xl p-3 bg-amber-100 px-10 font-bold text-amber-900 shadow-lg shadow-amber-950/50 tracking-wider rounded-lg hover:cursor-pointer hover:scale-110 transition-all duration-200;
 }
-
 h1 {
-  @apply text-4xl font-black text-amber-900 tracking-tighter;
+  @apply text-4xl font-black text-amber-900 tracking-tight font-second;
 }
 h2 {
-  @apply text-3xl font-black text-amber-900 tracking-tighter;
+  @apply text-3xl font-black text-amber-900 tracking-tighter  font-second text-center;
 }

@@ -10,7 +10,9 @@ const EggPicker = ({ className = '' }) => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-20 w-full ">
-        <h2>How do you like your eggs?</h2>
+        <h2>
+          How do you like <br /> your eggs?
+        </h2>
         <div className="grid grid-cols-2 grid-rows-2 gap-3 place-items-center">
           {eggTypes.map((egg) => (
             <div
@@ -25,7 +27,7 @@ const EggPicker = ({ className = '' }) => {
               <span className="mt-2 capitalize text-center tracking-wide">
                 {egg.id !== 'fried' ? `${egg.id} boiled` : `${egg.id} eggs`}
               </span>
-              <span className="text-gray-700 text-sm">{egg.time} minutes</span>
+              <span className="text-gray-500 text-xs">{egg.time} minutes</span>
             </div>
           ))}
         </div>

@@ -1,3 +1,7 @@
 ignoredBuiltDependencies:
+  - '@heroui/shared-utils'
   - '@swc/core'
   - esbuild
+
+onlyBuiltDependencies:
+  - '@tailwindcss/oxide'

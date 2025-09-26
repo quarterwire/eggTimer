@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import EggPicker from './components/eggPicker'
 import Timer from './components/Timer'
 
@@ -26,7 +25,7 @@ function App() {
       >
         <h1 className="font-bold text-2xl">Let's time your egg!</h1>
         <img
-          className="animate-spin-slow w-80 h-80"
+          className="animate-spin-slow w-100 h-100"
           src="./egg.png"
           alt="egg"
         />
