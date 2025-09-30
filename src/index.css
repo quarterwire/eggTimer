@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Questrial&display=swap');
 
 @import 'tailwindcss';
 
@@ -10,12 +10,6 @@
 @custom-variant dark (&:is(.dark *));
 
 @layer utilities {
-  @font-face {
-    font-family: Proxima Nova;
-    font-weight: 400;
-    src: url('/neurath.ttf') format('tff');
-  }
-
   @keyframes bouncing-loader {
     0%,
     100% {
@@ -47,8 +41,8 @@
   }
 }
 @theme {
-  --font-main: 'Faculty Glyphic', sans-serif;
-  --font-second: 'Neurath', sans-serif;
+  --font-main: 'Questrial', sans-serif;
+  --font-second: 'Quattrocento Sans', sans-serif;
 }
 
 * {

@@ -6,18 +6,18 @@ export type EggType = {
 export const eggTypes: EggType[] = [
   {
     id: 'soft',
-    time: 8,
+    time: 6,
   },
   {
     id: 'medium',
-    time: 10,
+    time: 8,
   },
   {
     id: 'hard',
-    time: 14,
+    time: 12,
   },
   {
     id: 'fried',
-    time: 6,
+    time: 4,
   },
 ]
