@@ -38,11 +38,9 @@ pnpm-debug.log*
 # TypeScript
 *.tsbuildinfo
 
-# lockfiles (optional – keep only one)
 /package-lock.json
 /yarn.lock
 
-# Optional: VSCode settings (if you don’t want to share workspace configs)
 /.vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json

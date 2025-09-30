@@ -29,12 +29,7 @@ const Timer = () => {
       return (
         <div className="flex flex-col items-center gap-10 h-full justify-center">
           <span className="text-6xl font-bold text-amber-900">Done!</span>
-          <button
-            className="px-4 py-2 bg-amber-200 rounded-lg shadow"
-            onClick={reset}
-          >
-            Back to menu
-          </button>
+          <button onClick={reset}>Back to menu</button>
         </div>
       )
     }
@@ -46,6 +41,7 @@ const Timer = () => {
           {zeroPad(minutes)}:{zeroPad(seconds)}
         </div>
         <img src="./timer.svg" className="animate-bouncer w-80" />
+        <button onClick={reset}>Reset</button>
       </div>
     )
   }
