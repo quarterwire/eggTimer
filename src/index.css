@@ -42,6 +42,10 @@
   @apply font-main antialiased;
 }
 
+body {
+  @apply bg-[#FFF1DE];
+}
+
 button {
   @apply px-8 py-2.5 sm:px-18 sm:py-3
   cursor-pointer
