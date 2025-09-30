@@ -10,12 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@heroui/button": "^2.2.26",
-    "@heroui/calendar": "^2.2.26",
-    "@heroui/progress": "^2.2.21",
-    "@heroui/react": "^2.8.4",
-    "@heroui/system": "2.4.22",
-    "@heroui/theme": "2.4.22",
     "@reduxjs/toolkit": "^2.9.0",
     "@tailwindcss/postcss": "^4.1.13",
     "@tailwindcss/vite": "^4.1.12",
