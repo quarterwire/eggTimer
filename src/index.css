@@ -15,6 +15,20 @@
     font-weight: 400;
     src: url('/neurath.ttf') format('tff');
   }
+
+  @keyframes bouncing-loader {
+    0%,
+    100% {
+      /* On the "ground", slightly squashed vertically */
+      transform: translateY(0) scaleY(0.9);
+      transform-origin: bottom;
+    }
+    50% {
+      /* At the peak of the bounce, slightly stretched vertically */
+      transform: translateY(-25px) scaleY(1.1);
+      transform-origin: bottom;
+    }
+  }
   @keyframes spin-slow {
     from {
       transform: rotate(0deg);
@@ -26,6 +40,10 @@
 
   .animate-spin-slow {
     animation: spin-slow 280s linear infinite;
+  }
+
+  .animate-bouncer {
+    animation: bouncing-loader 1.6s infinite alternate;
   }
 }
 @theme {
