@@ -43,8 +43,9 @@
 }
 
 button {
-  @apply px-6 py-2.5 sm:px-10 sm:py-3
-         bg-amber-200 text-amber-900
+  @apply px-8 py-2.5 sm:px-18 sm:py-3
+  cursor-pointer
+         bg-amber-100 text-amber-900
          text-base sm:text-lg font-bold tracking-wider
          rounded-lg shadow-lg shadow-amber-950/50
          transition-all duration-200
