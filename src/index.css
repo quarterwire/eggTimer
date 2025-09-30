@@ -2,27 +2,19 @@
 
 @import 'tailwindcss';
 
-/* Note: Make sure the relative reference is correct */
-/* I assumed when writing the response that they are in the same folder */
-@plugin './hero.ts';
-/* Note: You may need to change the path to fit your project structure */
-@source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
-@custom-variant dark (&:is(.dark *));
-
 @layer utilities {
   @keyframes bouncing-loader {
     0%,
     100% {
-      /* On the "ground", slightly squashed vertically */
       transform: translateY(0) scaleY(0.9);
       transform-origin: bottom;
     }
     50% {
-      /* At the peak of the bounce, slightly stretched vertically */
       transform: translateY(-25px) scaleY(1.1);
       transform-origin: bottom;
     }
   }
+
   @keyframes spin-slow {
     from {
       transform: rotate(0deg);
@@ -33,28 +25,54 @@
   }
 
   .animate-spin-slow {
-    animation: spin-slow 280s linear infinite;
+    animation: spin-slow 90s linear infinite;
   }
 
   .animate-bouncer {
     animation: bouncing-loader 1.6s infinite alternate;
   }
 }
+
 @theme {
   --font-main: 'Questrial', sans-serif;
   --font-second: 'Quattrocento Sans', sans-serif;
 }
 
 * {
-  @apply font-main;
+  @apply font-main antialiased;
 }
 
 button {
-  @apply text-3xl p-3 bg-amber-100 px-10 font-bold text-amber-900 shadow-lg shadow-amber-950/50 tracking-wider rounded-lg hover:cursor-pointer hover:scale-110 transition-all duration-200;
+  @apply px-6 py-2.5 sm:px-10 sm:py-3
+         bg-amber-200 text-amber-900
+         text-base sm:text-lg font-bold tracking-wider
+         rounded-lg shadow-lg shadow-amber-950/50
+         transition-all duration-200
+         hover:bg-amber-300 active:scale-95
+         focus:outline-none focus:ring-2 focus:ring-amber-600 focus:ring-offset-2
+         disabled:opacity-50 disabled:cursor-not-allowed;
 }
+
 h1 {
-  @apply text-4xl font-black text-amber-900 tracking-tight font-second;
+  @apply text-3xl sm:text-4xl font-black text-amber-900 tracking-tight font-second;
 }
+
 h2 {
-  @apply text-3xl font-black text-amber-900 tracking-tighter  font-second text-center;
+  @apply text-2xl sm:text-3xl font-black text-amber-900 tracking-tighter font-second text-center;
+}
+
+h3 {
+  @apply text-xl sm:text-2xl font-bold text-amber-900 tracking-tight font-second;
+}
+
+h4 {
+  @apply text-lg sm:text-xl font-bold text-amber-900 tracking-tight font-second;
+}
+
+p {
+  @apply text-sm sm:text-base text-gray-800 leading-relaxed;
+}
+
+a {
+  @apply text-amber-700 hover:text-amber-900 underline-offset-2 transition-colors duration-150;
 }
