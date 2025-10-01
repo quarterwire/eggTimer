@@ -50,7 +50,7 @@ button {
   @apply px-8 py-2.5 sm:px-18 sm:py-3
   cursor-pointer
          bg-amber-100 text-amber-900
-         text-base sm:text-lg font-bold tracking-wider
+         text-base sm:text-lg font-bold tracking-[0.25em]
          rounded-lg shadow-lg shadow-amber-950/50
          transition-all duration-200
          hover:bg-amber-300 active:scale-95
@@ -75,7 +75,7 @@ h4 {
 }
 
 p {
-  @apply text-sm sm:text-base text-gray-800 leading-relaxed;
+  @apply text-gray-800 leading-relaxed;
 }
 
 a {
