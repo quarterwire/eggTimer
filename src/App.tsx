@@ -7,16 +7,13 @@ function App() {
   const setView = useAppStore((state) => state.setView)
 
   return (
-    <main className="relative h-screen bg-[url('/background.jpg')] bg-cover bg-center">
+    <main className="relative h-[100dvh] bg-[url('/background.jpg')] bg-cover bg-center">
       <div className="absolute inset-0 bg-amber-200/90 z-0"></div>
 
-      {/* Timer */}
       {view === 'timer' && <Timer />}
 
-      {/* EggPicker */}
       {view === 'menu' && <EggPicker />}
 
-      {/* Start screen */}
       {view === 'start' && (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 z-10">
           <h1 className="font-bold text-2xl">Let's time your egg!</h1>

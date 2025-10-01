@@ -6,7 +6,7 @@ const EggPicker = ({ className = '' }) => {
 
   return (
     <section
-      className={`mx-2 relative h-full flex flex-col items-center justify-center gap-15 bg-[url('/background.jpg')] bg-cover bg-center ${className}`}
+      className={`mx-2 relative h-[100dvh] flex flex-col items-center justify-center gap-15 bg-[url('/background.jpg')] bg-cover bg-center ${className}`}
     >
       <div className="absolute inset-0 bg-amber-200/90 z-0"></div>
 

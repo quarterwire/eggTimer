@@ -1,8 +1,11 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Countdown, { zeroPad } from 'react-countdown'
 import useAppStore from '../store/useAppStore'
+import Warning from '../ui/Warning'
 
 const Timer = () => {
+  const [warning, setWarning] = useState(true)
+  const [countdownDate, setCountdownDate] = useState<number | null>(null)
   const selectedEgg = useAppStore((state) => state.selectedEgg)
   const targetDate = useAppStore((state) => state.targetDate)
   const reset = useAppStore((state) => state.reset)
@@ -13,6 +16,15 @@ const Timer = () => {
       reset()
     }
   }, [selectedEgg, targetDate, reset])
+
+  // Start countdown when warning is closed
+  const handleWarningClose = () => {
+    setWarning(false)
+    // Recalculate target date from now
+    if (selectedEgg) {
+      setCountdownDate(Date.now() + selectedEgg.time * 60 * 1000)
+    }
+  }
 
   if (!selectedEgg || !targetDate) return null
 
@@ -47,17 +59,27 @@ const Timer = () => {
   }
 
   return (
-    <div className="relative h-full flex flex-col gap-20 justify-center bg-[url('/background.jpg')] bg-center">
-      <div className="absolute inset-0 bg-amber-200/90 z-0" />
-      <div className="z-10 flex flex-col gap-30">
-        <Countdown
-          key={targetDate} // ensure restart even for same egg
-          date={targetDate}
-          precision={3}
-          renderer={renderer}
+    <>
+      {warning && (
+        <Warning
+          message="🥚 Make sure the water is boiling."
+          onClose={handleWarningClose}
         />
+      )}
+      <div className="relative h-[100dvh] flex flex-col gap-20 justify-center bg-[url('/background.jpg')] bg-center">
+        <div className="absolute inset-0 bg-amber-200/90 z-0" />
+        <div className="z-10 flex flex-col gap-30">
+          {!warning && countdownDate && (
+            <Countdown
+              key={countdownDate}
+              date={countdownDate}
+              precision={3}
+              renderer={renderer}
+            />
+          )}
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
