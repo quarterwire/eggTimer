@@ -1,13 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
-    "paths": {
-      "test-utils": ["./utils/test-utils"]
-    }
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "types": ["jest", "node"]
   },
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "include": ["src"]
 }
