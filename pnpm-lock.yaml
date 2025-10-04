@@ -20,6 +20,9 @@ importers:
       '@testing-library/jest-dom':
         specifier: ^6.9.1
         version: 6.9.1
+      '@types/node':
+        specifier: ^24.6.2
+        version: 24.6.2
       framer-motion:
         specifier: 12.23.22
         version: 12.23.22(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
