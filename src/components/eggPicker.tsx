@@ -1,15 +1,11 @@
 import { eggTypes } from '../assets/constants'
 import useAppStore from '../store/useAppStore'
-
+import Screen from '../ui/Screen'
 const EggPicker = ({ className = '' }) => {
   const setSelectedEgg = useAppStore((state) => state.setSelectedEgg)
 
   return (
-    <section
-      className={`mx-2 relative h-[100dvh] flex flex-col items-center justify-center gap-15 bg-[url('/background.jpg')] bg-cover bg-center ${className}`}
-    >
-      <div className="absolute inset-0 bg-amber-200/90 z-0"></div>
-
+    <Screen className={`mx-2 gap-15 ${className}`}>
       <div className="relative z-10 flex flex-col items-center gap-5 w-full">
         <h2 className="text-center font-bold text-2xl">
           How do you like <br /> your eggs?
@@ -35,7 +31,7 @@ const EggPicker = ({ className = '' }) => {
           ))}
         </div>
       </div>
-    </section>
+    </Screen>
   )
 }
 
