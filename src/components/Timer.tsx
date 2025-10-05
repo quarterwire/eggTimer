@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Countdown, { zeroPad } from 'react-countdown'
 import useAppStore from '../store/useAppStore'
 import Warning from '../ui/Warning'
+import Screen from '../ui/Screen'
 
 const Timer = () => {
   const [warning, setWarning] = useState(true)
@@ -39,10 +40,10 @@ const Timer = () => {
   }) => {
     if (completed) {
       return (
-        <div className="flex flex-col items-center gap-10 h-full justify-center">
+        <Screen>
           <span className="text-6xl font-bold text-amber-900">Done!</span>
           <button onClick={reset}>Back to menu</button>
-        </div>
+        </Screen>
       )
     }
 
@@ -66,8 +67,7 @@ const Timer = () => {
           onClose={handleWarningClose}
         />
       )}
-      <div className="relative h-[100dvh] flex flex-col gap-20 justify-center bg-[url('/background.jpg')] bg-center">
-        <div className="absolute inset-0 bg-amber-200/90 z-0" />
+      <Screen>
         <div className="z-10 flex flex-col gap-30">
           {!warning && countdownDate && (
             <Countdown
@@ -78,7 +78,7 @@ const Timer = () => {
             />
           )}
         </div>
-      </div>
+      </Screen>
     </>
   )
 }
