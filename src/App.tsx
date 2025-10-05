@@ -1,17 +1,13 @@
-import EggPicker from './components/eggPicker'
-import Timer from './components/Timer'
 import useAppStore from './store/useAppStore'
 import Screen from './ui/Screen'
-import Start from './components/Start'
-
+import { VIEWS } from './assets/constants'
 function App() {
   const view = useAppStore((state) => state.view)
+  const ViewComponent = VIEWS[view]
 
   return (
     <Screen>
-      <>{view === 'timer' && <Timer />}</>
-      <>{view === 'menu' && <EggPicker />}</>
-      <>{view === 'start' && <Start />}</>
+      <>{ViewComponent && <ViewComponent />}</>
     </Screen>
   )
 }
