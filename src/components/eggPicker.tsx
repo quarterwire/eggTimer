@@ -19,7 +19,8 @@ const EggPicker = ({ className = '' }) => {
               onClick={() => setSelectedEgg(egg)}
             >
               <img
-                src={`/eggType/${egg.id}.png`}
+                src={`/eggType/${egg.id}.webp`}
+                loading="lazy"
                 alt={egg.id !== 'fried' ? `${egg.id} boiled` : `${egg.id} eggs`}
                 className="rounded-full aspect-square"
               />
