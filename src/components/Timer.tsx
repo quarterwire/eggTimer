@@ -3,6 +3,7 @@ import Countdown, { zeroPad } from 'react-countdown'
 import useAppStore from '../store/useAppStore'
 import Warning from '../ui/Warning'
 import Screen from '../ui/Screen'
+import { Image } from '@unpic/react'
 
 const Timer = () => {
   const [warning, setWarning] = useState(true)
@@ -40,8 +41,10 @@ const Timer = () => {
   }) => {
     if (completed) {
       return (
-        <Screen>
-          <span className="text-6xl font-bold text-amber-900">Done!</span>
+        <Screen className="flex-col flex items-center justify-center">
+          <span className="text-6xl font-bold text-amber-900 text-center">
+            Done!
+          </span>
           <button onClick={reset}>Back to menu</button>
         </Screen>
       )
@@ -49,11 +52,18 @@ const Timer = () => {
 
     return (
       <div className="flex flex-col items-center gap-2">
-        <h1 className="text-6xl text-center">Time left</h1>
         <div className="text-5xl font-semibold text-amber-900">
           {zeroPad(minutes)}:{zeroPad(seconds)}
         </div>
-        <img src="./timer.svg" className="animate-bouncer w-80" />
+        <span className="animate-bouncer w-80">
+          {' '}
+          <Image
+            layout="constrained"
+            src="./timer.webp"
+            width={600}
+            height={600}
+          />
+        </span>
         <button onClick={reset}>Reset</button>
       </div>
     )
@@ -63,12 +73,18 @@ const Timer = () => {
     <>
       {warning && (
         <Warning
-          message="🥚 Make sure the water is boiling."
+          message={
+            selectedEgg.id == 'fried'
+              ? '🥚 Make sure the pan is hot.'
+              : '🥚 Make sure the water is boiling.'
+          }
           onClose={handleWarningClose}
         />
       )}
       <Screen>
-        <div className="z-10 flex flex-col gap-30">
+        <div className="z-10 flex flex-col gap-15">
+          <h1 className="text-center">Time left</h1>
+
           {!warning && countdownDate && (
             <Countdown
               key={countdownDate}
